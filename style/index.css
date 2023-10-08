@@ -8,6 +8,23 @@
   --accent-color-weakmain: rgb(241, 241, 221);
 }
 
+input[type="checkbox"] {
+  appearance: none;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1em;
+  height: 1em;
+  border: 0.10em solid var(--bg-color-outside);
+  border-radius: 50%;
+  transform: translateY(0.18em);
+}
+
+input[type="checkbox"]:checked {
+  box-shadow: inset 0 0 0.45em var(--accent-color-secundary);
+  transform: translateY(0.25em);
+}
+
 p {
   padding: 0px;
   margin: 0px;
@@ -95,15 +112,39 @@ body {
   font-size: 25px;
 }
 
-.input-formulary-title {
+.input-formulary-title,
+.input-formulary-single {
   background-color: var(--accent-color-main);
   border-radius: 15px 15px 0px 0px;
   padding-bottom: 2px;
 }
 
-.input-formulary-title-text {
+.input-formulary-single {
+  border-radius: 15px ;
+  align-items: center;
+}
+
+.input-formulary-title-text,
+.input-formulary-single-text {
   padding-left: 7px;
   font-size: 20px;
+}
+
+.input-formulary-single-text {
+  font-size: 16px;
+  display: inline;
+}
+
+.input-formulary-checkbox {
+  background-color: var(--bg-color-base);
+  vertical-align: middle;
+}
+
+.single-line-options{
+  margin: 10px 0px;
+  display: grid;
+  grid-template-columns: 90% 10%;
+  align-items: center;
 }
 
 .agent-name-input {
@@ -117,41 +158,24 @@ body {
   color: var(--bg-color-outside);
   background-color: var(--accent-color-weakmain);
 }
-/*
-.agent-shift-input,
-.agent-task-input {
-  max-width: 73%;
-  min-width: 73%;
-  height: 15px;
-  width: fit-content;
-  float: left;
-  border: none;
-  font-weight: 600;
-  padding: 5px 10px;
-}
 
-.agent-task-input {
-  min-width: 73%;
-}
-*/
-::-webkit-scrollbar {
+.agent-selection::-webkit-scrollbar {
   width: 5px;
 
 }
 
-::-webkit-scrollbar-track {
+.agent-selection::-webkit-scrollbar-track {
   background: var(--bg-color-base);
-  border-radius: 10px;
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+.agent-selection::-webkit-scrollbar-thumb {
   background: var(--accent-color-main);
   border-radius: 50px;
 }
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+.agent-selection::-webkit-scrollbar-thumb:hover {
   background: var(--accent-color-terciary);
   border-radius: 10px;
 }
@@ -181,51 +205,6 @@ body {
   border-bottom: 2px solid var(--accent-color-secundary);
   display: inline;
 }
-/*
-.dropbtn,
-.dropbtn-task {
-  min-width: 14.7%;
-  max-width: 19.2%;
-  min-height: 28px;
-  border: 1px solid var(--bg-color-outside);
-  font-size: 15px;
-  height: fit-content;
-  padding: 5px 5px;
-  border: none;
-  background-color: var(--accent-color-weakmain);
-}
-
-.dropdown,
-.dropdown-task {
-  position: relative;
-  display: inline;
-  min-width: 98%;
-}
-
-.dropdown-container {
-  border: 1px solid var(--bg-color-outside);
-  border-radius: 0px 0px 5px 5px ;
-  background-color: var(--accent-color-weakmain);
-}
-
-.dropdown-content,
-.dropdown-content-task {
-  display: none;
-  position: absolute;
-  min-width: inherit;
-  box-shadow: 0px 18px 16px 0px gray;
-}
-
-.dropdown-content p:hover,
-.dropdown-content-task p:hover {
-  background-color: var(--accent-color-secundary);
-}
-
-.dropdown:hover .dropbtn,
-.dropdown-task:hover .dropbtn-task {
-  background-color: var(--accent-color-main);
-}
-*/
 
 .dropdown-selection {
   position: relative;

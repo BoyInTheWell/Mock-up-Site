@@ -102,44 +102,7 @@ agentsList.forEach(value => {
 document.querySelector('.agent-selection')
 .innerHTML = agentsListHTML
 
-/*
-const dropdownButton = document.querySelector('.dropbtn');
 
-dropdownButton.addEventListener('click', () => {
-  document.querySelector('.dropdown').style.setProperty('display', 'block')
-  document.querySelector('.dropdown-content').style.setProperty('display', 'block')
-});
-
-
-const dropdownItem = document.querySelectorAll('.dropdown-item');
-
-dropdownItem.forEach((item) => {
-  item.addEventListener('click', () => {
-   document.querySelector('.dropdown-content').style.setProperty('display', 'none')
-   document.querySelector('.agent-shift-input').innerHTML = item.innerHTML
-  });
-})  
-
-
-
-const dropdownTaskButton = document.querySelector('.js-dropbtn-task');
-
-
-dropdownTaskButton.addEventListener('click', () => {
-  document.querySelector('.dropdown-task').style.setProperty('display', 'block')
-  document.querySelector('.dropdown-content-task').style.setProperty('display', 'block')
-});
-
-
-const dropdownTaskItem = document.querySelectorAll('.dropdown-item-task');
-
-dropdownTaskItem.forEach((item) => {
-  item.addEventListener('click', () => {
-   document.querySelector('.dropdown-content-task').style.setProperty('display', 'none')
-   document.querySelector('.agent-task-input').innerHTML = item.innerHTML
-  });
-})  
-*/
 function createDropdown (options, classData, titleParagraph, titleText) {
 // generates all the HTML  
 let itemsHTML = ''
