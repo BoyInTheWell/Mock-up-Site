@@ -1,0 +1,300 @@
+:root {
+  --bg-color-base : aliceblue;
+  --bg-color-outside : black; 
+  --accent-color-main : rgb(245, 245, 69);
+  --accent-color-secundary: rgb(57, 182, 224);
+  --accent-color-terciary: rgb(177, 177, 243);
+  --accent-color-quaternary: rgb(156, 156, 240);
+  --accent-color-weakmain: rgb(241, 241, 221);
+}
+
+p {
+  padding: 0px;
+  margin: 0px;
+  color: var(--bg-color-outside);
+}
+
+body {
+  background-color: var(--bg-color-outside);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  overflow: auto;
+}
+
+.base {
+  margin: auto;
+  width: 90vw;
+  height: 90vh;
+  background-color: var(--bg-color-base);
+}
+
+.outside-button {
+  margin: 0px 0px 15px 10px;
+  height: 25px;
+  color: var(--bg-color-outside);
+  background-color: var(--bg-color-base);
+  border: none;
+  border-radius: 5px;
+}
+
+.header {
+  background-color: var(--accent-color-main);
+  padding: 5px 15px;
+  margin-bottom: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.header-left-arrow-icon {
+  width: 25px;
+  padding-right: 150px;
+}
+
+.header-left-arrow-button {
+  background-color: transparent;
+  border: none;
+}
+
+.inside-body-formulary {
+  margin-left: 15px;
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 28% 14% 10% 10% 14% 12%;
+  grid-template-rows: 25% 25% 25% 25%;
+  column-gap: 2%;
+  max-height: 71vh;
+}
+
+.agent-selection p {
+  padding: 13px 0px 5px 5px;
+  margin: 0px 10px ;
+  margin-bottom: 2px;
+  
+}
+
+.agent-selection {
+  background-color: var(--accent-color-quaternary);
+  border-radius: 0px 0px 15px 15px;
+  overflow: hidden scroll;
+  max-height: 71vh;
+}
+
+.agent-selection-header {
+  grid-row-start: 1;
+  grid-row-end: 10;
+  max-height: 73vh;
+  border-radius: 15px;
+  background-color: var(--accent-color-main);
+}
+
+.agent-selection-header-title {
+  padding-left: 13px;
+  font-weight: 750;
+  font-size: 25px;
+}
+
+.input-formulary-title {
+  background-color: var(--accent-color-main);
+  border-radius: 15px 15px 0px 0px;
+  padding-bottom: 2px;
+}
+
+.input-formulary-title-text {
+  padding-left: 7px;
+  font-size: 20px;
+}
+
+.agent-name-input {
+  width: max-content;
+  border-radius: 0px 0px 5px 5px;
+  border: 1px solid var(--bg-color-outside);
+  width: 97%;
+  height: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--bg-color-outside);
+  background-color: var(--accent-color-weakmain);
+}
+/*
+.agent-shift-input,
+.agent-task-input {
+  max-width: 73%;
+  min-width: 73%;
+  height: 15px;
+  width: fit-content;
+  float: left;
+  border: none;
+  font-weight: 600;
+  padding: 5px 10px;
+}
+
+.agent-task-input {
+  min-width: 73%;
+}
+*/
+::-webkit-scrollbar {
+  width: 5px;
+
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color-base);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color-main);
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color-terciary);
+  border-radius: 10px;
+}
+
+.formulary-item {
+  margin: 0px 10px;
+  display: grid;
+  grid-template-columns: 90% 10%;
+  align-items: center;
+  border-bottom: 2px solid var(--accent-color-terciary);
+  border-radius: 5px;
+}
+
+.formulary-right-icon {
+  width: 15px;
+  vertical-align: middle;
+}
+
+.first-title {
+  font-size: 25px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  margin-top: 25px;
+  padding-left: 25px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--accent-color-secundary);
+  display: inline;
+}
+/*
+.dropbtn,
+.dropbtn-task {
+  min-width: 14.7%;
+  max-width: 19.2%;
+  min-height: 28px;
+  border: 1px solid var(--bg-color-outside);
+  font-size: 15px;
+  height: fit-content;
+  padding: 5px 5px;
+  border: none;
+  background-color: var(--accent-color-weakmain);
+}
+
+.dropdown,
+.dropdown-task {
+  position: relative;
+  display: inline;
+  min-width: 98%;
+}
+
+.dropdown-container {
+  border: 1px solid var(--bg-color-outside);
+  border-radius: 0px 0px 5px 5px ;
+  background-color: var(--accent-color-weakmain);
+}
+
+.dropdown-content,
+.dropdown-content-task {
+  display: none;
+  position: absolute;
+  min-width: inherit;
+  box-shadow: 0px 18px 16px 0px gray;
+}
+
+.dropdown-content p:hover,
+.dropdown-content-task p:hover {
+  background-color: var(--accent-color-secundary);
+}
+
+.dropdown:hover .dropbtn,
+.dropdown-task:hover .dropbtn-task {
+  background-color: var(--accent-color-main);
+}
+*/
+
+.dropdown-selection {
+  position: relative;
+  min-width: 99%;
+}
+
+.dropdown-container {
+  display: grid;
+  grid-template-columns: 85% 15%;
+  align-items: center;
+  background-color: var(--accent-color-weakmain);
+  border: 1px solid var(--bg-color-outside);
+  border-radius: 0px 0px 5px 5px;
+}
+
+.dropdown-button {
+  color: transparent;
+  border: none;
+  height: 27px;
+}
+
+.dropdown-button:hover {
+  background-color: var(--accent-color-secundary);
+  animation-name: changeButtonColor;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-duration: 500ms;
+}
+
+.dropdown-item-text {
+  padding: 3px 0px 3px 15px ;
+}
+
+.dropdown-content-holder{
+  display: none;
+  position: absolute;
+  width: fit-content;
+  box-shadow: 0px 18px 16px 0px gray;
+  min-width: inherit;
+  
+}
+
+.dropdown-option {
+  padding: 3px 5px;
+}
+
+@keyframes changeButtonColor {
+  from {background-color: transparent;}
+  to {background-color: var(--accent-color-secundary);}
+}
+
+.dropdown-option:hover {
+  background-color: var(--accent-color-secundary);
+  animation-name: changeButtonColor;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-duration: 500ms;
+}
+
+.dropdown-down-arrow {
+  width: 13px;
+}
+
+.input-date-selection {
+  font-size: 15px;
+  padding: 3px 10px;
+  min-width: 88%;
+  position: relative;
+  border: 1px solid var(--bg-color-outside);
+  border-radius: 0px 0px 5px 5px;
+  background-color: var(--accent-color-weakmain);
+  font-weight: 600;
+  color: var(--bg-color-outside);
+}
