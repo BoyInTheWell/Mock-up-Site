@@ -229,16 +229,18 @@ body {
 
 .dropdown-selection {
   position: relative;
-  min-width: 99%;
+  min-width: 98%;
 }
 
 .dropdown-container {
   display: grid;
-  grid-template-columns: 85% 15%;
+  grid-template-columns: minmax(75px, 85%) minmax(20px, 15%);
   align-items: center;
   background-color: var(--accent-color-weakmain);
   border: 1px solid var(--bg-color-outside);
   border-radius: 0px 0px 5px 5px;
+  overflow: hidden;
+  text-wrap: nowrap;
 }
 
 .dropdown-button {
@@ -289,7 +291,7 @@ body {
 
 .input-date-selection {
   font-size: 15px;
-  padding: 3px 10px;
+  padding: 3px 11px;
   min-width: 88%;
   position: relative;
   border: 1px solid var(--bg-color-outside);
@@ -297,4 +299,5 @@ body {
   background-color: var(--accent-color-weakmain);
   font-weight: 600;
   color: var(--bg-color-outside);
+  text-transform: uppercase;
 }
