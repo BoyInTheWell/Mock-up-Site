@@ -155,10 +155,26 @@ createDropdown(taskOptions, "task", "task", "Agent's Task")
 createDropdown(dropdownOptions, "supervisor", "supervisor", "Agent's Supervisor")
 
 
-/* const btnn = document.querySelector('.js-pallete-button');
+const testPalette = [
+  'aliceblue',
+  'black',
+  'red',
+  'brown', 
+  'green',
+  'chocolate',
+  'lightcoral'
+]
+
+const btnn = document.querySelector('.js-pallete-button');
 
 const theme = document.querySelector(':root');
 
 btnn.addEventListener('click', () => {
-  theme.style.setProperty('--bg-color-outside', 'red')
-}); */
+  theme.style.setProperty('--bg-color-outside', testPalette[0]);
+  theme.style.setProperty('--bg-color-base', testPalette[1]);
+  theme.style.setProperty('--accent-color-main', testPalette[2]);
+  theme.style.setProperty('--accent-color-secundary', testPalette[3]);
+  theme.style.setProperty('--accent-color-terciary', testPalette[4]);
+  theme.style.setProperty('--accent-color-quaternary', testPalette[5]);
+  theme.style.setProperty('--accent-color-weakmain', testPalette[6]);
+}); 
