@@ -106,8 +106,8 @@ body {
   margin-left: 15px;
   margin-top: 25px;
   display: grid;
-  grid-template-columns: 28% 14% 10% 10% 14% 13%;
-  grid-template-rows: 25% 25% 1% 15% 23% 15%;
+  grid-template-columns: 28% 14% 10% 10% 14.3% 13%;
+  grid-template-rows: 25% 25% 1% 15% 31% 15%;
   column-gap: 2%;
   max-height: 71vh;
 }
@@ -333,4 +333,51 @@ body {
   font-weight: 600;
   color: var(--bg-color-outside);
   text-transform: uppercase;
+}
+
+.button-regular {
+  border: none;
+  border-radius: 15px;
+  height: 55px;
+}
+
+.button-regular:focus {
+  border: 2px solid var(--bg-color-base);
+  outline: 2px solid var(--bg-color-base);
+  outline-offset: -5px;
+}
+
+.button-type-one {
+  grid-column-start: 5;
+  grid-column-end: 6;
+  background-color: var(--accent-color-main);
+}
+
+@keyframes buttonPress-typeOne {
+  from {background-color: var(--accent-color-main);}
+  to {background-color: var(--accent-color-weakmain);}
+}
+
+
+.button-type-one:focus {
+  background-color: var(--accent-color-main);
+  animation-name: buttonPress-typeOne;
+  animation-duration: 100ms;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.button-type-two {
+  background-color: var(--accent-color-secundary);
+}
+
+@keyframes buttonPress-typeTwo {
+  from {background-color: var(--accent-color-secundary);}
+  to {background-color: var(--accent-color-terciary);}
+}
+
+.button-type-two:focus {
+  background-color: var(--accent-color-secundary);
+  animation-name: buttonPress-typeTwo;
+  animation-duration: 100ms;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
