@@ -157,68 +157,250 @@ createDropdown(taskOptions, "task", "task", "Agent's Task")
 createDropdown(dropdownOptions, "supervisor", "supervisor", "Agent's Supervisor")
 
 
-const testPalette = [
-  'aliceblue',
-  'black',
-  'red',
-  'brown', 
-  'green',
-  'chocolate',
-  'lightcoral'
-]
-
 const sunset = [
-  'aliceblue',
-  'black', 
-  'black',
-  'rgb(245, 245, 69)',
-  'rgb(57, 182, 224)',
-  'rgb(177, 177, 243)',
-  'rgb(156, 156, 240)',
-  'rgb(241, 241, 221)',
-  'black'
+  '#F0F8FF',
+  '#000000', 
+  '#000000',
+  '#F5F545',
+  '#39B6E0',
+  '#B1B1F3',
+  '#9C9CF0',
+  '#F1F1DD',
+  '#000000',
+  '#000000',
+  '#F5F545'
 ]
 
 const duality = [
-  'white',
-  'lightgray',
-  'white',
-  'black',
-  'black',
-  'black',
-  'white',
-  'white',
-  'black'
+  '#FFFFFF',
+  '#D3D3D3',
+  '#FFFFFF',
+  '#000000',
+  '#000000',
+  '#000000',
+  '#FFFFFF',
+  '#FFFFFF',
+  '#000000',
+  '#FFFFFF',
+  '#000000'
+]
+
+const hell = [
+  '#F0F8FF',
+  '#000000',
+  '#000000',
+  '#00FFFF',
+  '#6495ED',
+  '#00FFFF',
+  '#FFFFFF',
+  '#FFFFFF',
+  '#000000',
+  '#000000',
+  '#00FFFF'
+]
+
+const nostalgia = [
+  '#FFFFF0',
+  '#F5DEB3',
+  '#000000',
+  '#F0E68C',
+  '#FFE4B5',
+  '#F4A460',
+  '#F5F5DC',
+  '#F5F5DC',
+  '#000000',
+  '#000000',
+  '#F0E68C'
+]
+
+const vampire = [
+  '#0A0909',
+  '#F58787',
+  '#000000',
+  '#B22222',
+  '#D82246',
+  '#FF6347',
+  '#161313',
+  '#161313',
+  '#FFFFFF',
+  '#FFFFFF',
+  '#B22222'
+]
+
+const hyperspace = [
+  '#09090A',
+  '#01051A', 
+  '#000000',
+  '#3939A8',
+  '#63098D',
+  '#ADD8E6',
+  '#141316',
+  '#131316',
+  '#FFFFFF',
+  '#FFFFFF',
+  '#3939A8'
+]
+
+const peace = [
+  '#252525',
+  '#999999', 
+  '#000000',
+  '#4B4B4B',
+  '#4B4B4B',
+  '#4B4B4B',
+  '#8D8D8D',
+  '#8D8D8D',
+  '#000000',
+  '#000000',
+  '#8D8D8D'
+]
+
+const corpo = [
+  '#00060c',
+  '#011122',
+  '#C0A407',
+  '#00060c',
+  '#C0A407',
+  '#031425',
+  '#00060c',
+  '#00060c',
+  '#FFFFFF',
+  '#FFFFFF',
+  '#011a33'
+]
+
+const yang = [
+  '#000000',
+  '#0C0C0C',
+  '#FFFFFF',
+  '#000000',
+  '#FFFFFF',
+  '#FFFFFF',
+  '#000000',
+  '#000000',
+  '#FFFFFF',
+  '#000000',
+  '#FFFFFF'
 ]
 
 const theme = document.querySelector(':root');
 
-const firstOption = document.querySelector('.js-sunset');
+function changePalette(palette, dataColor) {
+  const option = document.querySelector(`[data-colors="${dataColor}"]`);
+  option.addEventListener ( 'click', () =>{
+    theme.style.setProperty('--bg-color-base', palette[0]);
+    theme.style.setProperty('--bg-color-outside', palette[1]);
+    theme.style.setProperty('--accent-color-text', palette[2]);
+    theme.style.setProperty('--accent-color-main', palette[3]);
+    theme.style.setProperty('--accent-color-secundary', palette[4]);
+    theme.style.setProperty('--accent-color-terciary', palette[5]);
+    theme.style.setProperty('--accent-color-quaternary', palette[6]);
+    theme.style.setProperty('--accent-color-weakmain', palette[7]);
+    theme.style.setProperty('--accent-color-alternateText', palette[8]);
+    theme.style.setProperty('--accent-color-specialText', palette[9]);
+    theme.style.setProperty('--accent-color-specialMain', palette[10]);
+    
+    document.querySelector(`[data-picker="base"]`).value = theme.style.getPropertyValue('--bg-color-base');
+    document.querySelector(`[data-picker="outside"]`).value = theme.style.getPropertyValue('--bg-color-outside');
+    document.querySelector(`[data-picker="text"]`).value = theme.style.getPropertyValue('--accent-color-text');
+    document.querySelector(`[data-picker="main"]`).value = theme.style.getPropertyValue('--accent-color-main');
+    document.querySelector(`[data-picker="secundary"]`).value = theme.style.getPropertyValue('--accent-color-secundary');
+    document.querySelector(`[data-picker="terciary"]`).value = theme.style.getPropertyValue('--accent-color-terciary');
+    document.querySelector(`[data-picker="quaternary"]`).value = theme.style.getPropertyValue('--accent-color-quaternary');
+    document.querySelector(`[data-picker="weak"]`).value = theme.style.getPropertyValue('--accent-color-weakmain');
+    document.querySelector(`[data-picker="alternate"]`).value = theme.style.getPropertyValue('--accent-color-alternateText');
+    document.querySelector(`[data-picker="specialtext"]`).value = theme.style.getPropertyValue('--accent-color-specialText');
+    document.querySelector(`[data-picker="specialmain"]`).value = theme.style.getPropertyValue('--accent-color-specialMain');
+  })
+}
 
-firstOption.addEventListener ( 'click', () => {
-    theme.style.setProperty('--bg-color-base', sunset[0]);
-    theme.style.setProperty('--bg-color-outside', sunset[1]);
-    theme.style.setProperty('--accent-color-text', sunset[2]);
-    theme.style.setProperty('--accent-color-main', sunset[3]);
-    theme.style.setProperty('--accent-color-secundary', sunset[4]);
-    theme.style.setProperty('--accent-color-terciary', sunset[5]);
-    theme.style.setProperty('--accent-color-quaternary', sunset[6]);
-    theme.style.setProperty('--accent-color-weakmain', sunset[7]);
-    theme.style.setProperty('--accent-color-alternateText', sunset[8]);
-  }
-)
+changePalette(sunset, 'sunset');
+changePalette(duality, 'duality');
+changePalette(hell, 'hell');
+changePalette(nostalgia, 'nostalgia');
+changePalette(vampire, 'vampire');
+changePalette(hyperspace, 'hyperspace');
+changePalette(peace, 'peace');
+changePalette(corpo, 'corpo');
+changePalette(yang, 'yang');
 
-const secondOption = document.querySelector('.js-duality');
+const colorPickerOne = document.querySelector(`[data-picker="base"]`);
 
-secondOption.addEventListener ( 'click', () => {
-    theme.style.setProperty('--bg-color-base', duality[0]);
-    theme.style.setProperty('--bg-color-outside', duality[1]);
-    theme.style.setProperty('--accent-color-text', duality[2]);
-    theme.style.setProperty('--accent-color-main', duality[3]);
-    theme.style.setProperty('--accent-color-secundary', duality[4]);
-    theme.style.setProperty('--accent-color-terciary', duality[5]);
-    theme.style.setProperty('--accent-color-quaternary', duality[6]);
-    theme.style.setProperty('--accent-color-weakmain', duality[7]);
-    theme.style.setProperty('--accent-color-alternateText', duality[8]);
-  }
-)
+colorPickerOne.addEventListener('change', () => {
+  theme.style.setProperty('--bg-color-base', colorPickerOne.value);
+})
+
+const colorPickerTwo = document.querySelector(`[data-picker="outside"]`);
+
+colorPickerTwo.addEventListener('change', () => {
+  theme.style.setProperty('--bg-color-outside', colorPickerTwo.value);
+})
+const colorPickerThree = document.querySelector(`[data-picker="text"]`);
+
+colorPickerThree.addEventListener('change', () => {
+  theme.style.setProperty('--accent-color-text', colorPickerThree.value);
+})
+const colorPickerFour = document.querySelector(`[data-picker="main"]`);
+
+colorPickerFour.addEventListener('change', () => {
+  theme.style.setProperty('--accent-color-main', colorPickerFour.value);
+})
+const colorPickerFive = document.querySelector(`[data-picker="secundary"]`);
+
+colorPickerFive.addEventListener('change', () => {
+  theme.style.setProperty('--accent-color-secundary', colorPickerFive.value);
+})
+const colorPickerSix = document.querySelector(`[data-picker="terciary"]`);
+
+colorPickerSix.addEventListener('change', () => {
+  theme.style.setProperty('--accent-color-terciary', colorPickerSix.value);
+})
+const colorPickerSeven = document.querySelector(`[data-picker="quaternary"]`);
+
+colorPickerSeven.addEventListener('change', () => {
+  theme.style.setProperty('--accent-color-quaternary', colorPickerSeven.value);
+})
+const colorPickerEight = document.querySelector(`[data-picker="weak"]`);
+
+colorPickerEight.addEventListener('change', () => {
+  theme.style.setProperty('--accent-color-weakmain', colorPickerEight.value);
+})
+const colorPickerNine = document.querySelector(`[data-picker="alternate"]`);
+
+colorPickerNine.addEventListener('change', () => {
+  theme.style.setProperty('--accent-color-alternateText', colorPickerNine.value);
+})
+const colorPickerTen = document.querySelector(`[data-picker="specialtext"]`);
+
+colorPickerTen.addEventListener('change', () => {
+  theme.style.setProperty('--accent-color-specialText', colorPickerTen.value);
+})
+const colorPickerEleven = document.querySelector(`[data-picker="specialmain"]`);
+
+colorPickerEleven.addEventListener('change', () => {
+  theme.style.setProperty('--accent-color-specialMain', colorPickerEleven.value);
+})
+
+theme.style.setProperty('--bg-color-base', sunset[0]);
+theme.style.setProperty('--bg-color-outside', sunset[1]);
+theme.style.setProperty('--accent-color-text', sunset[2]);
+theme.style.setProperty('--accent-color-main', sunset[3]);
+theme.style.setProperty('--accent-color-secundary', sunset[4]);
+theme.style.setProperty('--accent-color-terciary', sunset[5]);
+theme.style.setProperty('--accent-color-quaternary', sunset[6]);
+theme.style.setProperty('--accent-color-weakmain', sunset[7]);
+theme.style.setProperty('--accent-color-alternateText', sunset[8]);
+theme.style.setProperty('--accent-color-specialText', sunset[9]);
+theme.style.setProperty('--accent-color-specialMain', sunset[10]);
+
+document.querySelector(`[data-picker="base"]`).value = theme.style.getPropertyValue('--bg-color-base');
+document.querySelector(`[data-picker="outside"]`).value = theme.style.getPropertyValue('--bg-color-outside');
+document.querySelector(`[data-picker="text"]`).value = theme.style.getPropertyValue('--accent-color-text');
+document.querySelector(`[data-picker="main"]`).value = theme.style.getPropertyValue('--accent-color-main');
+document.querySelector(`[data-picker="secundary"]`).value = theme.style.getPropertyValue('--accent-color-secundary');
+document.querySelector(`[data-picker="terciary"]`).value = theme.style.getPropertyValue('--accent-color-terciary');
+document.querySelector(`[data-picker="quaternary"]`).value = theme.style.getPropertyValue('--accent-color-quaternary');
+document.querySelector(`[data-picker="weak"]`).value = theme.style.getPropertyValue('--accent-color-weakmain');
+document.querySelector(`[data-picker="alternate"]`).value = theme.style.getPropertyValue('--accent-color-alternateText');
+document.querySelector(`[data-picker="specialtext"]`).value = theme.style.getPropertyValue('--accent-color-specialText');
+document.querySelector(`[data-picker="specialmain"]`).value = theme.style.getPropertyValue('--accent-color-specialMain');

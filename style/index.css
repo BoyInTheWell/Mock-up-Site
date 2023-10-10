@@ -1,16 +1,18 @@
 :root {
-  --bg-color-base : white;
-  --bg-color-outside : lightgray; 
+  --bg-color-base : black;
+  --bg-color-outside : rgb(7, 7, 7); 
   --accent-color-text : white;
   --accent-color-main : black;
-  --accent-color-secundary: black;
-  --accent-color-terciary: black;
-  --accent-color-quaternary: white;
-  --accent-color-weakmain: white;
-  --accent-color-alternateText: black;
+  --accent-color-secundary: white;
+  --accent-color-terciary: white;
+  --accent-color-quaternary: black;
+  --accent-color-weakmain: black;
+  --accent-color-alternateText: white;
+  --accent-color-specialText: black;
+  --accent-color-specialMain: white;
 }
-
-/* Base one 
+  
+/*
   :root {
   --bg-color-base : aliceblue;
   --bg-color-outside : black; 
@@ -21,6 +23,8 @@
   --accent-color-quaternary: rgb(156, 156, 240);
   --accent-color-weakmain: rgb(241, 241, 221);
   --accent-color-alternateText: white;
+  --accent-color-specialText: var(--accent-color-alternateText);
+  --accent-color-specialMain: var(--accent-color-main);
 } */
 
 input[type="checkbox"] {
@@ -58,6 +62,8 @@ body {
   width: 90vw;
   height: 90vh;
   background-color: var(--bg-color-base);
+  
+  z-index: -1;
 }
 
 .outside-button {
@@ -91,6 +97,10 @@ body {
   display: inline;
   padding: 0;
   margin: 0;
+}
+
+p.header-text {
+  color: var(--accent-color-specialText);
 }
 
 .header-left-arrow-icon {
@@ -226,7 +236,8 @@ body {
 .formulary-competences-text {
   position: relative;
   width: 98.9%;
-  height: 300px;
+  max-height: 19em;
+  height: min-content;
   padding-left: 5px;
   font-weight: 500;
   overflow-y: scroll;
@@ -255,7 +266,7 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-color-main);
+  background: var(--accent-color-specialMain);
   border-radius: 50px;
 }
 
@@ -335,6 +346,7 @@ body {
   box-shadow: 0px 18px 16px 0px gray;
   min-width: inherit;
   background-color: var(--bg-color-base);
+  z-index: 5;
 }
 
 .dropdown-option {
@@ -368,7 +380,7 @@ body {
   border-radius: 0px 0px 5px 5px;
   background-color: var(--accent-color-weakmain);
   font-weight: 600;
-  color: var(--bg-color-outside);
+  color: var(--accent-color-alternateText);
   text-transform: uppercase;
 }
 
@@ -376,8 +388,9 @@ body {
   border: none;
   border-radius: 15px;
   height: 55px;
-  color: var(--bg-color-outside);
+  color: var(--accent-color-specialText);
   font-size: 20px;
+  font-weight: 600;
 }
 
 .button-regular:focus {
@@ -389,7 +402,7 @@ body {
 .button-type-one {
   grid-column-start: 5;
   grid-column-end: 6;
-  background-color: var(--accent-color-main);
+  background-color: var(--accent-color-specialMain);
 }
 
 @keyframes buttonPress-typeOne {
@@ -457,4 +470,23 @@ body {
 
 .dropdown-palette:hover .dropdown-items {
   display: block;
+}
+
+.manual-control {
+  margin-top: 3em;
+  background-color: white;
+  padding: 0.5em 2em;
+}
+
+.manual-control-title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.manual-control-selections {
+  font-size: 1.5em;
+}
+
+.color-picker {
+  width: 8em;
 }
