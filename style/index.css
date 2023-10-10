@@ -481,10 +481,12 @@ p.header-text {
 .manual-control-title {
   font-size: 2em;
   font-weight: bold;
+  color: black;
 }
 
 .manual-control-selections {
   font-size: 1.5em;
+  color: black;
 }
 
 .color-picker {
