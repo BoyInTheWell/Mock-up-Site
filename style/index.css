@@ -1,12 +1,26 @@
 :root {
+  --bg-color-base : white;
+  --bg-color-outside : lightgray; 
+  --accent-color-text : white;
+  --accent-color-main : black;
+  --accent-color-secundary: black;
+  --accent-color-terciary: black;
+  --accent-color-quaternary: white;
+  --accent-color-weakmain: white;
+  --accent-color-alternateText: black;
+}
+
+/* :root {
   --bg-color-base : aliceblue;
   --bg-color-outside : black; 
+  --accent-color-text : black;
   --accent-color-main : rgb(245, 245, 69);
   --accent-color-secundary: rgb(57, 182, 224);
   --accent-color-terciary: rgb(177, 177, 243);
   --accent-color-quaternary: rgb(156, 156, 240);
   --accent-color-weakmain: rgb(241, 241, 221);
-}
+  --accent-color-alternateText: white;
+} */
 
 input[type="checkbox"] {
   appearance: none;
@@ -18,7 +32,6 @@ input[type="checkbox"] {
   border: 0.10em solid var(--bg-color-outside);
   border-radius: 50%;
   transform: translateY(0.18em);
-  background-color: ;
 }
 
 input[type="checkbox"]:checked {
@@ -29,7 +42,7 @@ input[type="checkbox"]:checked {
 p {
   padding: 0px;
   margin: 0px;
-  color: var(--bg-color-outside);
+  color: var(--accent-color-text);
 }
 
 body {
@@ -49,7 +62,7 @@ body {
 .outside-button {
   margin: 0px 0px 15px 10px;
   height: 25px;
-  color: var(--bg-color-outside);
+  color: var(--accent-color-text);
   background-color: var(--bg-color-base);
   border: none;
   border-radius: 5px;
@@ -94,13 +107,25 @@ body {
   grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 3;
+  color: var(--accent-color-alternateText);
 }
+
+
+.input-text-long {
+  color: var(--accent-color-alternateText);
+}
+
+/* .long-description p,
+.long-competences p {
+  color: var(--accent-color-alternateText);
+} */
 
 .long-competences {
   grid-column-start: 5;
   grid-column-end: 7;
   grid-row-start: 1;
   grid-row-end: 3;
+  color: var(--accent-color-alternateText);
 }
 
 .inside-body-formulary {
@@ -117,7 +142,7 @@ body {
   padding: 13px 0px 5px 5px;
   margin: 0px 10px ;
   margin-bottom: 2px;
-  
+  color: var(--accent-color-alternateText);
 }
 
 .agent-selection {
@@ -160,6 +185,10 @@ body {
   font-size: 20px;
 }
 
+.formulary-description-title {
+  color: var(--accent-color-text);
+}
+
 .input-formulary-single-text {
   font-size: 16px;
   display: inline;
@@ -188,7 +217,7 @@ body {
   height: 25px;
   font-size: 15px;
   font-weight: bold;
-  color: var(--bg-color-outside);
+  color: var(--accent-color-alternateText);
   background-color: var(--accent-color-weakmain);
 }
 
@@ -259,6 +288,7 @@ body {
   padding-bottom: 5px;
   border-bottom: 2px solid var(--accent-color-secundary);
   display: inline;
+  color: var(--accent-color-alternateText);
 }
 
 .dropdown-selection {
@@ -275,10 +305,12 @@ body {
   border-radius: 0px 0px 5px 5px;
   overflow: hidden;
   text-wrap: nowrap;
+ 
 }
 
 .dropdown-button {
   color: transparent;
+  background-color: var(--accent-color-weakmain);
   border: none;
   height: 27px;
 }
@@ -292,6 +324,7 @@ body {
 
 .dropdown-item-text {
   padding: 3px 0px 3px 15px ;
+  color: var(--accent-color-alternateText);
 }
 
 .dropdown-content-holder{
@@ -300,15 +333,16 @@ body {
   width: fit-content;
   box-shadow: 0px 18px 16px 0px gray;
   min-width: inherit;
-  
+  background-color: var(--bg-color-base);
 }
 
 .dropdown-option {
   padding: 3px 5px;
+  color: var(--accent-color-alternateText);
 }
 
 @keyframes changeButtonColor {
-  from {background-color: transparent;}
+  from {background-color: var(--accent-color-weakmain);}
   to {background-color: var(--accent-color-secundary);}
 }
 
@@ -317,6 +351,7 @@ body {
   animation-name: changeButtonColor;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   animation-duration: 500ms;
+  color: var(--bg-color-outside);
 }
 
 .dropdown-down-arrow {
@@ -340,6 +375,8 @@ body {
   border: none;
   border-radius: 15px;
   height: 55px;
+  color: var(--bg-color-outside);
+  font-size: 20px;
 }
 
 .button-regular:focus {
@@ -381,4 +418,42 @@ body {
   animation-name: buttonPress-typeTwo;
   animation-duration: 100ms;
   animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.dropdown-items {
+  color: var(--bg-color-outside);
+  width: inherit;
+  display: none;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.outside-button {
+  color: var(--accent-color-alternateText);
+}
+
+.dropdown-items p {
+  padding: 6px 8px;
+  color: var(--accent-color-alternateText);
+}
+
+.dropdown-items p:hover {
+  background-color: var(--accent-color-secundary);
+  color: var(--bg-color-outside);
+}
+
+.dropdown-palette {
+  position: relative;
+  display: inline-block;
+ 
+}
+
+.dropdown-items {
+  position: absolute;
+  background-color: var(--bg-color-base);
+}
+
+.dropdown-palette:hover .dropdown-items {
+  display: block;
 }

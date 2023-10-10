@@ -89,6 +89,8 @@ const taskOptions = [
   "PT-BHP2006"
 ]
 
+
+
 let agentsListHTML = '';
 
 agentsList.forEach(value => {
@@ -165,16 +167,58 @@ const testPalette = [
   'lightcoral'
 ]
 
-const btnn = document.querySelector('.js-pallete-button');
+const sunset = [
+  'aliceblue',
+  'black', 
+  'black',
+  'rgb(245, 245, 69)',
+  'rgb(57, 182, 224)',
+  'rgb(177, 177, 243)',
+  'rgb(156, 156, 240)',
+  'rgb(241, 241, 221)',
+  'black'
+]
+
+const duality = [
+  'white',
+  'lightgray',
+  'white',
+  'black',
+  'black',
+  'black',
+  'white',
+  'white',
+  'black'
+]
 
 const theme = document.querySelector(':root');
 
-btnn.addEventListener('click', () => {
-  theme.style.setProperty('--bg-color-outside', testPalette[0]);
-  theme.style.setProperty('--bg-color-base', testPalette[1]);
-  theme.style.setProperty('--accent-color-main', testPalette[2]);
-  theme.style.setProperty('--accent-color-secundary', testPalette[3]);
-  theme.style.setProperty('--accent-color-terciary', testPalette[4]);
-  theme.style.setProperty('--accent-color-quaternary', testPalette[5]);
-  theme.style.setProperty('--accent-color-weakmain', testPalette[6]);
-}); 
+const firstOption = document.querySelector('.js-sunset');
+
+firstOption.addEventListener ( 'click', () => {
+    theme.style.setProperty('--bg-color-base', sunset[0]);
+    theme.style.setProperty('--bg-color-outside', sunset[1]);
+    theme.style.setProperty('--accent-color-text', sunset[2]);
+    theme.style.setProperty('--accent-color-main', sunset[3]);
+    theme.style.setProperty('--accent-color-secundary', sunset[4]);
+    theme.style.setProperty('--accent-color-terciary', sunset[5]);
+    theme.style.setProperty('--accent-color-quaternary', sunset[6]);
+    theme.style.setProperty('--accent-color-weakmain', sunset[7]);
+    theme.style.setProperty('--accent-color-alternateText', sunset[8]);
+  }
+)
+
+const secondOption = document.querySelector('.js-duality');
+
+secondOption.addEventListener ( 'click', () => {
+    theme.style.setProperty('--bg-color-base', duality[0]);
+    theme.style.setProperty('--bg-color-outside', duality[1]);
+    theme.style.setProperty('--accent-color-text', duality[2]);
+    theme.style.setProperty('--accent-color-main', duality[3]);
+    theme.style.setProperty('--accent-color-secundary', duality[4]);
+    theme.style.setProperty('--accent-color-terciary', duality[5]);
+    theme.style.setProperty('--accent-color-quaternary', duality[6]);
+    theme.style.setProperty('--accent-color-weakmain', duality[7]);
+    theme.style.setProperty('--accent-color-alternateText', duality[8]);
+  }
+)
