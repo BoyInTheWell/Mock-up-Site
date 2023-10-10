@@ -168,7 +168,10 @@ const sunset = [
   '#F1F1DD',
   '#000000',
   '#000000',
-  '#F5F545'
+  '#F5F545',
+  'images/left-arrow.png',
+  'images/right-arrow.png',
+  'images/down-arrow.png'
 ]
 
 const duality = [
@@ -182,7 +185,10 @@ const duality = [
   '#FFFFFF',
   '#000000',
   '#FFFFFF',
-  '#000000'
+  '#000000',
+  'images/left-arrow-white.png',
+  'images/right-arrow.png',
+  'images/down-arrow.png'
 ]
 
 const hell = [
@@ -196,7 +202,10 @@ const hell = [
   '#FFFFFF',
   '#000000',
   '#000000',
-  '#00FFFF'
+  '#00FFFF',
+  'images/left-arrow.png',
+  'images/right-arrow.png',
+  'images/down-arrow.png'
 ]
 
 const nostalgia = [
@@ -210,7 +219,10 @@ const nostalgia = [
   '#F5F5DC',
   '#000000',
   '#000000',
-  '#F0E68C'
+  '#F0E68C',
+  'images/left-arrow-white.png',
+  'images/right-arrow.png',
+  'images/down-arrow.png'
 ]
 
 const vampire = [
@@ -224,7 +236,10 @@ const vampire = [
   '#161313',
   '#FFFFFF',
   '#FFFFFF',
-  '#B22222'
+  '#B22222',
+  'images/left-arrow-white.png',
+  'images/right-arrow-white.png',
+  'images/down-arrow-white.png'
 ]
 
 const hyperspace = [
@@ -238,7 +253,10 @@ const hyperspace = [
   '#131316',
   '#FFFFFF',
   '#FFFFFF',
-  '#3939A8'
+  '#3939A8',
+  'images/left-arrow-white.png',
+  'images/right-arrow-white.png',
+  'images/down-arrow-white.png'
 ]
 
 const peace = [
@@ -252,7 +270,10 @@ const peace = [
   '#8D8D8D',
   '#000000',
   '#000000',
-  '#8D8D8D'
+  '#8D8D8D',
+  'images/left-arrow.png',
+  'images/right-arrow.png',
+  'images/down-arrow.png'
 ]
 
 const corpo = [
@@ -266,7 +287,10 @@ const corpo = [
   '#00060c',
   '#FFFFFF',
   '#FFFFFF',
-  '#011a33'
+  '#011a33',
+  'images/left-arrow-white.png',
+  'images/right-arrow-white.png',
+  'images/down-arrow-white.png'
 ]
 
 const yang = [
@@ -280,10 +304,16 @@ const yang = [
   '#000000',
   '#FFFFFF',
   '#000000',
-  '#FFFFFF'
+  '#FFFFFF',
+  'images/left-arrow.png',
+  'images/right-arrow-white.png',
+  'images/down-arrow-white.png'
 ]
 
 const theme = document.querySelector(':root');
+const headerArrow = document.querySelector('.header-left-arrow-icon');
+const formularyArrow = document.querySelectorAll('.formulary-right-icon')
+const dropdownArrow = document.querySelectorAll('.dropdown-down-arrow');
 
 function changePalette(palette, dataColor) {
   const option = document.querySelector(`[data-colors="${dataColor}"]`);
@@ -299,7 +329,14 @@ function changePalette(palette, dataColor) {
     theme.style.setProperty('--accent-color-alternateText', palette[8]);
     theme.style.setProperty('--accent-color-specialText', palette[9]);
     theme.style.setProperty('--accent-color-specialMain', palette[10]);
-    
+    headerArrow.src = palette[11]
+    formularyArrow.forEach(value => {
+      value.src = palette[12]
+    })
+    dropdownArrow.forEach(value => {
+      value.src = palette[13]
+    })
+
     document.querySelector(`[data-picker="base"]`).value = theme.style.getPropertyValue('--bg-color-base');
     document.querySelector(`[data-picker="outside"]`).value = theme.style.getPropertyValue('--bg-color-outside');
     document.querySelector(`[data-picker="text"]`).value = theme.style.getPropertyValue('--accent-color-text');
